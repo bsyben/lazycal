@@ -240,8 +240,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## 🐛 Bug Reports & Feature Requests
 
 Found a bug or have an idea for improvement?
-- **Bug Reports**: [Open an issue](https://github.com/yourusername/lazycal/issues) with detailed steps to reproduce
-- **Feature Requests**: [Start a discussion](https://github.com/yourusername/lazycal/discussions) to share your ideas
+- **Bug Reports**: [Open an issue](https://github.com/bsyben/lazycal/issues) with detailed steps to reproduce
+- **Feature Requests**: [Start a discussion](https://github.com/bsyben/lazycal/discussions) to share your ideas
 
 ## 🙏 Acknowledgments
 
