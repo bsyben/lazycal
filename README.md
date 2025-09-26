@@ -235,7 +235,21 @@ We welcome contributions! Here's how you can help:
 
 ## 📝 License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under a **Dual License Agreement**:
+
+### 🆓 **Personal & Non-Commercial Use**
+- **Free for personal use** - Use LazyCal for your own productivity needs
+- **Free for educational use** - Perfect for students and academic research
+- **Free for non-profit use** - Open source projects and non-profit organizations
+
+### 💼 **Commercial Use**
+- **Requires separate license** - Businesses and commercial entities need authorization
+- **Flexible licensing options** - Site licenses, OEM licensing, custom terms available
+- **Contact for pricing** - Reach out to bsyben@gmail.com for commercial licensing
+
+For complete license terms, see the [LICENSE](LICENSE) file.
+
+**Commercial License Inquiries**: bsyben@gmail.com
 
 ## 🐛 Bug Reports & Feature Requests
 

@@ -1,13 +1,20 @@
-MIT License
+LazyCal - Dual License Agreement
 
-Copyright (c) 2025 bsyben
+Copyright (c) 2025 Siyu Bian
+
+This software is licensed under a dual license model:
+
+================================================================================
+PERSONAL AND NON-COMMERCIAL USE LICENSE
+================================================================================
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+in the Software without restriction for PERSONAL, EDUCATIONAL, and NON-COMMERCIAL
+purposes, including without limitation the rights to use, copy, modify, merge,
+publish, distribute, sublicense, and/or sell copies of the Software for personal
+use, and to permit persons to whom the Software is furnished to do so, subject
+to the following conditions:
 
 The above copyright notice and this permission notice shall be included in all
 copies or substantial portions of the Software.
@@ -19,3 +26,62 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+================================================================================
+COMMERCIAL USE LICENSE
+================================================================================
+
+COMMERCIAL USE of this software requires a separate commercial license agreement.
+
+Commercial use includes, but is not limited to:
+- Use by for-profit organizations or businesses
+- Integration into commercial products or services
+- Use in revenue-generating activities
+- Distribution as part of commercial software packages
+- Use by government entities or contractors for commercial purposes
+
+To obtain a commercial license, please contact:
+Email: bsyben@gmail.com
+Subject: LazyCal Commercial License Request
+
+Commercial licenses are available on a case-by-case basis and may include:
+- Site licenses for organizations
+- OEM licensing for software vendors
+- Custom licensing terms for specific use cases
+- Support and maintenance agreements
+
+================================================================================
+DEFINITIONS
+================================================================================
+
+"Personal Use" means use by individuals for their own personal, non-commercial
+purposes, including personal productivity, learning, and experimentation.
+
+"Educational Use" means use in educational institutions for teaching, learning,
+or academic research purposes, provided no commercial benefit is derived.
+
+"Non-Commercial Use" means use that does not involve or result in commercial
+advantage, monetary compensation, or revenue generation.
+
+"Commercial Use" means any use that is primarily intended for or directed toward
+commercial advantage or monetary compensation, including use by businesses,
+corporations, or other for-profit entities.
+
+================================================================================
+ENFORCEMENT
+================================================================================
+
+Violation of these license terms may result in:
+- Immediate termination of license rights
+- Legal action to enforce compliance
+- Claims for damages and attorney fees
+
+For questions about licensing terms or to report violations, contact:
+bsyben@gmail.com
+
+================================================================================
+
+This license is effective as of the date of first distribution and remains in
+effect until terminated in accordance with the terms herein.
+
+Last updated: September 26, 2025
