@@ -112,6 +112,67 @@ LazyCal stores all your data locally in your browser using localStorage. This me
 - ✅ Fast performance with instant updates
 - ⚠️ Data is tied to your specific browser and device
 
+### 🔄 Git Synchronization
+
+**NEW**: You can now sync your tasks across multiple computers using Git! LazyCal includes export/import functionality that works perfectly with version control.
+
+#### How to Set Up Git Sync:
+
+1. **Initial Setup** (on your main computer):
+   ```bash
+   # In your LazyCal directory
+   git init
+   git add .
+   git commit -m "Initial LazyCal setup"
+   git remote add origin https://github.com/yourusername/your-lazycal-repo.git
+   git push -u origin main
+   ```
+
+2. **Export Your Tasks**:
+   - Open LazyCal → Settings → Data Synchronization
+   - Click "Export Tasks" to download `lazycal-data-YYYY-MM-DD.json`
+   - Move this file to your LazyCal directory
+   - Rename it to `lazycal-data.json` for consistency
+
+3. **Commit and Push**:
+   ```bash
+   git add lazycal-data.json
+   git commit -m "Update tasks - $(date)"
+   git push
+   ```
+
+4. **Sync on Other Computers**:
+   ```bash
+   # Clone or pull the repository
+   git clone https://github.com/yourusername/your-lazycal-repo.git
+   # or
+   git pull
+
+   # Open LazyCal in browser
+   # Go to Settings → Data Synchronization
+   # Click "Import Tasks" and select lazycal-data.json
+   ```
+
+#### Git Workflow Tips:
+
+- **Daily Sync**: Export and commit your tasks at the end of each day
+- **Branch Strategy**: Use branches for different contexts (work/personal)
+- **Conflict Resolution**: If conflicts occur, the most recent export usually contains the latest data
+- **Backup Safety**: LazyCal automatically creates backups before importing
+
+#### Example Git Workflow:
+```bash
+# Morning routine (pull latest tasks)
+git pull
+# Import the latest lazycal-data.json in the app
+
+# Evening routine (save your progress)
+# Export tasks from the app to lazycal-data.json
+git add lazycal-data.json
+git commit -m "Tasks update: $(date +%Y-%m-%d)"
+git push
+```
+
 ## 🔧 Configuration
 
 ### Settings Available:

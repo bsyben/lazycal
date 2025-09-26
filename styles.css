@@ -588,6 +588,57 @@ body {
     color: #2c3e50;
 }
 
+/* Settings Modal Specific Styles */
+.settings-content {
+    padding: 1.5rem;
+}
+
+.settings-section {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #ecf0f1;
+}
+
+.settings-section h4 {
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.section-description {
+    color: #7f8c8d;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+}
+
+.sync-controls {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.sync-info {
+    background: #f8f9fa;
+    padding: 1rem;
+    border-radius: 8px;
+    border-left: 4px solid #3498db;
+}
+
+.sync-info small {
+    color: #5a6c7d;
+    line-height: 1.4;
+}
+
+.sync-info code {
+    background: #e9ecef;
+    padding: 0.2rem 0.4rem;
+    border-radius: 4px;
+    font-family: 'Monaco', 'Menlo', monospace;
+    font-size: 0.8rem;
+}
+
 /* Form Styles */
 form {
     padding: 1.5rem;
@@ -731,6 +782,16 @@ form {
     .archive-filters {
         justify-content: center;
         flex-wrap: wrap;
+    }
+
+    .sync-controls {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .settings-section {
+        margin-top: 1rem;
+        padding-top: 1rem;
     }
 }
 

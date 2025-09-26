@@ -567,6 +567,19 @@ class TaskManager {
             this.handleSettingsSubmit();
         });
 
+        // Data Export/Import
+        document.getElementById('export-data-btn').addEventListener('click', () => {
+            this.exportData();
+        });
+
+        document.getElementById('import-data-btn').addEventListener('click', () => {
+            document.getElementById('import-file-input').click();
+        });
+
+        document.getElementById('import-file-input').addEventListener('change', (e) => {
+            this.importData(e.target.files[0]);
+        });
+
         // Archive filter buttons
         document.querySelectorAll('.filter-btn').forEach(btn => {
             btn.addEventListener('click', (e) => {
@@ -878,6 +891,139 @@ class TaskManager {
 
     saveSettings() {
         localStorage.setItem('lazycal-settings', JSON.stringify(this.settings));
+    }
+
+    // Data Export/Import for Git Synchronization
+    exportData() {
+        const exportData = {
+            version: '1.0',
+            exportDate: new Date().toISOString(),
+            tasks: this.tasks,
+            settings: this.settings,
+            metadata: {
+                totalTasks: this.tasks.length,
+                activeTasks: this.tasks.filter(t => t.status === 'active').length,
+                completedTasks: this.tasks.filter(t => t.status === 'completed').length,
+                overdueTasks: this.tasks.filter(t => t.status === 'overdue').length
+            }
+        };
+
+        const dataStr = JSON.stringify(exportData, null, 2);
+        const dataBlob = new Blob([dataStr], { type: 'application/json' });
+        
+        const link = document.createElement('a');
+        link.href = URL.createObjectURL(dataBlob);
+        link.download = `lazycal-data-${new Date().toISOString().split('T')[0]}.json`;
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+        
+        // Show success message
+        alert(`Successfully exported ${exportData.tasks.length} tasks!\n\nFile: ${link.download}\n\nYou can now commit this file to Git for synchronization.`);
+    }
+
+    importData(file) {
+        if (!file) return;
+
+        const reader = new FileReader();
+        reader.onload = (e) => {
+            try {
+                const importedData = JSON.parse(e.target.result);
+                
+                // Validate data structure
+                if (!this.validateImportData(importedData)) {
+                    alert('Invalid file format. Please select a valid LazyCal export file.');
+                    return;
+                }
+
+                // Show import confirmation with details
+                const confirmMessage = `Import Data Summary:
+                
+• Total Tasks: ${importedData.tasks.length}
+• Active Tasks: ${importedData.metadata?.activeTasks || 'Unknown'}
+• Completed Tasks: ${importedData.metadata?.completedTasks || 'Unknown'}
+• Export Date: ${new Date(importedData.exportDate).toLocaleDateString()}
+
+This will replace all your current tasks and settings. Continue?`;
+
+                if (confirm(confirmMessage)) {
+                    // Backup current data
+                    const backup = {
+                        tasks: [...this.tasks],
+                        settings: {...this.settings},
+                        timestamp: new Date().toISOString()
+                    };
+                    localStorage.setItem('lazycal-backup', JSON.stringify(backup));
+
+                    // Import new data
+                    this.tasks = importedData.tasks.map(task => ({
+                        ...task,
+                        startDate: new Date(task.startDate),
+                        dueDate: new Date(task.dueDate),
+                        createdAt: new Date(task.createdAt),
+                        completedAt: task.completedAt ? new Date(task.completedAt) : undefined
+                    }));
+                    
+                    this.settings = { ...this.settings, ...importedData.settings };
+                    
+                    // Save imported data
+                    this.saveTasks();
+                    this.saveSettings();
+                    
+                    // Refresh the current view
+                    this.renderCurrentView();
+                    this.setupDailyReminder();
+                    
+                    alert(`Successfully imported ${importedData.tasks.length} tasks!\n\nYour previous data has been backed up and can be restored if needed.`);
+                    
+                    // Close settings modal
+                    document.getElementById('settings-modal').classList.remove('active');
+                }
+            } catch (error) {
+                console.error('Import error:', error);
+                alert('Error reading file. Please make sure it\'s a valid LazyCal export file.');
+            }
+        };
+        
+        reader.readAsText(file);
+        
+        // Reset file input
+        document.getElementById('import-file-input').value = '';
+    }
+
+    validateImportData(data) {
+        // Check required fields
+        if (!data || typeof data !== 'object') return false;
+        if (!Array.isArray(data.tasks)) return false;
+        if (!data.settings || typeof data.settings !== 'object') return false;
+        if (!data.version || !data.exportDate) return false;
+
+        // Validate task structure
+        for (const task of data.tasks) {
+            if (!task.id || !task.name || typeof task.totalWorkload !== 'number') {
+                return false;
+            }
+            if (!task.startDate || !task.dueDate || !task.priority) {
+                return false;
+            }
+        }
+
+        return true;
+    }
+
+    restoreBackup() {
+        const backup = localStorage.getItem('lazycal-backup');
+        if (backup) {
+            const backupData = JSON.parse(backup);
+            this.tasks = backupData.tasks;
+            this.settings = backupData.settings;
+            this.saveTasks();
+            this.saveSettings();
+            this.renderCurrentView();
+            alert('Backup restored successfully!');
+        } else {
+            alert('No backup found.');
+        }
     }
 }
 

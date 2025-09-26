@@ -199,10 +199,35 @@
                 <h3>Settings</h3>
                 <button class="close-btn">&times;</button>
             </div>
-            <div class="form-group">
-                <label for="reminder-time">Daily Reminder Time</label>
-                <input type="time" id="reminder-time" value="17:00">
-                <small>Time to remind you to track daily progress</small>
+            <div class="settings-content">
+                <div class="form-group">
+                    <label for="reminder-time">Daily Reminder Time</label>
+                    <input type="time" id="reminder-time" value="17:00">
+                    <small>Time to remind you to track daily progress</small>
+                </div>
+                
+                <div class="settings-section">
+                    <h4><i class="fas fa-sync-alt"></i> Data Synchronization</h4>
+                    <p class="section-description">Export and import your tasks to sync across different computers using Git.</p>
+                    
+                    <div class="sync-controls">
+                        <button type="button" class="btn btn-primary" id="export-data-btn">
+                            <i class="fas fa-download"></i> Export Tasks
+                        </button>
+                        <button type="button" class="btn btn-secondary" id="import-data-btn">
+                            <i class="fas fa-upload"></i> Import Tasks
+                        </button>
+                        <input type="file" id="import-file-input" accept=".json" style="display: none;">
+                    </div>
+                    
+                    <div class="sync-info">
+                        <small>
+                            <i class="fas fa-info-circle"></i>
+                            Export creates a <code>lazycal-data.json</code> file that you can commit to Git.
+                            Import this file on other computers to sync your tasks.
+                        </small>
+                    </div>
+                </div>
             </div>
             <div class="form-actions">
                 <button type="button" class="btn btn-secondary" id="cancel-settings-btn">Cancel</button>
