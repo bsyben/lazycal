@@ -2,7 +2,39 @@
 
 A web-based task management application designed for people who struggle with procrastination. LazyCal intelligently adjusts your daily workload based on your procrastination patterns and helps you stay on track with your goals.
 
-![LazyCal Screenshot](https://via.placeholder.com/800x400/3498db/ffffff?text=LazyCal+Task+Management)
+## 📸 Screenshots
+
+### Task List View
+![Task List View](screenshots/截屏2025-09-26%2017.03.51.png)
+*Create, edit, and manage all your tasks with priority-based color coding and progress tracking*
+
+### Calendar View
+![Calendar View](screenshots/截屏2025-09-26%2017.04.00.png)
+*Visualize your tasks across weeks or months with intelligent scheduling*
+
+### Daily Panel
+![Daily Panel](screenshots/截屏2025-09-26%2017.04.54.png)
+*Focus on today's tasks with adjusted workload based on your procrastination coefficient*
+
+### Archive View
+![Archive View](screenshots/截屏2025-09-26%2017.06.42.png)
+*Review completed and overdue tasks with smart filtering options*
+
+### Task Creation
+![Task Creation](screenshots/截屏2025-09-26%2017.06.53.png)
+*Comprehensive task creation with procrastination coefficient and custom units*
+
+### Progress Tracking
+![Progress Tracking](screenshots/截屏2025-09-26%2017.07.09.png)
+*Daily progress tracking with automatic completion detection*
+
+### Settings & Sync
+![Settings & Sync](screenshots/截屏2025-09-26%2017.07.23.png)
+*Configure reminders and sync your tasks across devices using Git*
+
+### Data Export
+![Data Export](screenshots/截屏2025-09-26%2017.08.19.png)
+*Export your tasks for Git-based synchronization across multiple computers*
 
 ## ✨ Features
 
